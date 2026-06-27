@@ -25,7 +25,7 @@ schema.md             # file format description
 | `leet` | Character substitution with digits/special chars | `kwotah` -> `kw074h`, `leet` -> `1337` |
 | `script_switch` | Script switching or homoglyph usage | `BoPk` -> `Ворк` (anglicism in Ruissian), `MoHeTka` -> `Монетка`|
 | `suffix` | Adding diminutive or semantic suffixes | `kwotah` -> `kwotahxd`, `kwotah` -> `kwot'yah` (`квотах` -> `квотях`) |
-| `combined` | Combination of multiple transformations | `разочарование` -> `Pa3o4aPoBaHue` (leet + script_switch), `акция` -> `AkL|uR` (leet with "ц": "L|" + script_switch) |
+| `combined` | Combination of multiple transformations | `разочарование` -> `Pa3o4aPoBaHue` (leet + script_switch), `заработок` -> `3aPa6oTok` (leet + script_switch)|
  
 
 ## Format
