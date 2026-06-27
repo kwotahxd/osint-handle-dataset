@@ -1,0 +1,88 @@
+{
+  "version": "0.1",
+  "type": "leet",
+  "description": "Замена символов цифрами и/или спецсимволами (leet speak). Может применяться как к латинице, так и к кириллице.",
+  "substitutions": {
+    "a": ["4", "@"],
+    "а": ["4", "@"],
+    "e": ["3"],
+    "е": ["3"],
+    "i": ["1", "!"],
+    "o": ["0"],
+    "t": ["7"],
+    "s": ["5", "$"],
+    "g": ["9", "6"],
+    "b": ["8"],
+    "з": ["3"],
+    "ч": ["4"],
+    "о": ["0"],
+    "в": ["8"],
+    "z": ["2"],
+    "c": ["("],
+    "с": ["("]
+  },
+  "patterns": {
+    "partial": {
+      "description": "Замена только части символов, не всех подряд",
+      "subtypes": [
+        {
+          "name": "alternating",
+          "description": "Каждая вторая буква — leet, остальные оригинал (или наоборот)",
+          "example": "egoist → 3G0157"
+        }
+      ]
+    },
+    "full": {
+      "description": "Все возможные символы заменены"
+    }
+  },
+  "notes": [
+    "Замены g→6 и G→6 актуальны преимущественно для капса, т.к. визуальное сходство выше",
+    "Кириллические символы могут участвовать в leet наравне с латиницей",
+    "Leet может комбинироваться с другими трансформациями (см. combined.json)"
+  ],
+  "verified_examples": [
+    {
+      "base": "kwotah",
+      "result": "kw074h",
+      "applied": {"o": "0", "a": "4", "t": "7"},
+      "pattern": "partial",
+      "combined": false,
+      "source": "Telegram handle a173r_kw074h"
+    },
+    {
+      "base": "egoist",
+      "result": "3G0157",
+      "applied": {"e": "3", "o": "0", "i": "1", "s": "5", "t": "7"},
+      "pattern": "partial/alternating",
+      "combined": false,
+      "source": "Discord & Telegram bio (3G0157, (U713, 5W33713)"
+    },
+    {
+      "base": "cutie",
+      "result": "(U713",
+      "applied": {"c": "(", "t": "7", "i": "1", "e": "3"},
+      "pattern": "partial/alternating",
+      "combined": false,
+      "source": "Discord & Telegram bio (3G0157, (U713, 5W33713)"
+    },
+    {
+      "base": "sweetie",
+      "result": "5W33713",
+      "applied": {"s": "5", "e": "3", "t": "7", "i": "1"},
+      "pattern": "partial/alternating",
+      "combined": false,
+      "source": "Discord & Telegram bio (3G0157, (U713, 5W33713)"
+    },
+    {
+      "base": "разочарование",
+      "result": "Pa3o4aPoBaHue",
+      "applied": {"з": "3", "ч": "4"},
+      "pattern": "partial",
+      "combined": true,
+      "combined_with": ["script_switch"],
+      "ref_id": "pa3o4apobahue",
+      "source": "disrespect_d' (Discord) account name in Escape From Tarkov"
+    }
+  ]
+}
