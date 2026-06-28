@@ -30,7 +30,7 @@ Exception — `combined.json`, which covers examples where multiple transformati
     }
   },
  
-  "notes": ["string"],
+  "notes": ["string"], 				# any notes will go here
  
   "verified_examples": [
     {
@@ -54,7 +54,7 @@ Exception — `combined.json`, which covers examples where multiple transformati
 | `description` | string | Human-readable description of the type |
 | `substitutions` | object | Substitution table: character → list of possible replacements |
 | `patterns` | object | Application patterns (full, partial, alternating, ... ) |
-| `notes` | array | Additional remarks |
+| `notes` | array | Additional remarks, optional |
 | `verified_examples` | array | Verified real-world examples |
  
 ### verified_examples fields

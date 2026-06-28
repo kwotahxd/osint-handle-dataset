@@ -1,7 +1,7 @@
 {
   "version": "0.1",
   "type": "leet",
-  "description": "Замена символов цифрами и/или спецсимволами (leet speak). Может применяться как к латинице, так и к кириллице.",
+  "description": "Replace characters with numbers and/or special characters (leet speak). This can be applied to both the Latin and Cyrillic alphabets.",
   "substitutions": {
     "a": ["4", "@"],
     "а": ["4", "@"],
@@ -23,24 +23,19 @@
   },
   "patterns": {
     "partial": {
-      "description": "Замена только части символов, не всех подряд",
+      "description": "Replace only some of the characters, not all of them",
       "subtypes": [
         {
           "name": "alternating",
-          "description": "Каждая вторая буква — leet, остальные оригинал (или наоборот)",
+          "description": "Every second(or first, or third, etc) character replaced with leet (or in that case original kept)",
           "example": "egoist → 3G0157"
         }
       ]
     },
     "full": {
-      "description": "Все возможные символы заменены"
+      "description": "Replace all characters"
     }
   },
-  "notes": [
-    "Замены g→6 и G→6 актуальны преимущественно для капса, т.к. визуальное сходство выше",
-    "Кириллические символы могут участвовать в leet наравне с латиницей",
-    "Leet может комбинироваться с другими трансформациями (см. combined.json (WIP))"
-  ],
   "verified_examples": [
     {
       "base": "kwotah",

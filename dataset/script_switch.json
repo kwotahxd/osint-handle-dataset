@@ -1,0 +1,65 @@
+{
+  "version": "0.1",
+  "type": "script_switch",
+  "description": "Substitution of visually identical characters from different Unicode scripts (homoglyphs). In practice, handles are almost always Latin-based (URL constraints), so the dominant pattern is mixing Cyrillic homoglyphs into an otherwise Latin handle, or writing a Cyrillic word entirely in Latin lookalikes.",
+  "homoglyphs": {
+    "lowercase": [
+      {"cyrillic": "а", "latin": "a", "cyrillic_cp": "U+0430", "latin_cp": "U+0061"},
+      {"cyrillic": "е", "latin": "e", "cyrillic_cp": "U+0435", "latin_cp": "U+0065"},
+      {"cyrillic": "о", "latin": "o", "cyrillic_cp": "U+043E", "latin_cp": "U+006F"},
+      {"cyrillic": "р", "latin": "p", "cyrillic_cp": "U+0440", "latin_cp": "U+0070"},
+      {"cyrillic": "с", "latin": "c", "cyrillic_cp": "U+0441", "latin_cp": "U+0063"},
+      {"cyrillic": "х", "latin": "x", "cyrillic_cp": "U+0445", "latin_cp": "U+0078"},
+      {"cyrillic": "к", "latin": "k", "cyrillic_cp": "U+043A", "latin_cp": "U+006B"}
+    ],
+    "uppercase": [
+      {"cyrillic": "А", "latin": "A", "cyrillic_cp": "U+0410", "latin_cp": "U+0041"},
+      {"cyrillic": "В", "latin": "B", "cyrillic_cp": "U+0412", "latin_cp": "U+0042"},
+      {"cyrillic": "Е", "latin": "E", "cyrillic_cp": "U+0415", "latin_cp": "U+0045"},
+      {"cyrillic": "К", "latin": "K", "cyrillic_cp": "U+041A", "latin_cp": "U+004B"},
+      {"cyrillic": "М", "latin": "M", "cyrillic_cp": "U+041C", "latin_cp": "U+004D"},
+      {"cyrillic": "Н", "latin": "H", "cyrillic_cp": "U+041D", "latin_cp": "U+0048"},
+      {"cyrillic": "О", "latin": "O", "cyrillic_cp": "U+041E", "latin_cp": "U+004F"},
+      {"cyrillic": "Р", "latin": "P", "cyrillic_cp": "U+0420", "latin_cp": "U+0050"},
+      {"cyrillic": "С", "latin": "C", "cyrillic_cp": "U+0421", "latin_cp": "U+0043"},
+      {"cyrillic": "Т", "latin": "T", "cyrillic_cp": "U+0422", "latin_cp": "U+0054"},
+      {"cyrillic": "Х", "latin": "X", "cyrillic_cp": "U+0425", "latin_cp": "U+0058"}
+    ]
+  },
+  "patterns": {
+    "full_substitution": {
+      "description": "All eligible characters in the handle are replaced with homoglyphs from the other script"
+    },
+    "partial_substitution": {
+      "description": "Only some characters are replaced; the rest remain in the original script"
+    }
+  },
+  "notes": [
+    "Cyrillic homoglyphs are visually indistinguishable from their Latin counterparts in most fonts",
+    "Most platforms restrict usernames to ASCII/Latin, so the dominant real-world pattern is a Latin-looking handle that contains Cyrillic codepoints",
+    "Unicode codepoints are provided to help tooling detect mixed-script strings that appear identical to the human eye",
+    "script_switch can be combined with leet (see combined.json (WIP) )"
+  ],
+  "verified_examples": [
+    {
+      "base": "ворк",
+      "result": "BoPk",
+      "direction": "cyrillic_to_latin",
+      "applied": {"В": "B", "о": "o", "Р": "P", "к": "k"},
+      "pattern": "partial_substitution",
+      "combined": false,
+      "source": "personal usage"
+    },
+    {
+      "base": "разочарование",
+      "result": "Pa3o4aPoBaHue",
+      "direction": "cyrillic_to_latin",
+      "applied": {"р": "P", "а": "a", "о": "o", "в": "B", "н": "H", "е": "e"},
+      "pattern": "partial_substitution",
+      "combined": true,
+      "combined_with": ["leet"],
+      "ref_id": "pa3o4apobahue",
+      "source": "disrespect_d' (Discord) account name in Escape From Tarkov"
+    }
+  ]
+}
