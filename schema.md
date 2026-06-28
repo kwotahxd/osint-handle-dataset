@@ -30,7 +30,7 @@ Exception — `combined.json`, which covers examples where multiple transformati
     }
   },
  
-  "notes": ["string"], 				# any notes will go here
+  "notes": ["string"],
  
   "verified_examples": [
     {
