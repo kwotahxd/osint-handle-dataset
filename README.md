@@ -11,7 +11,7 @@ This dataset collects and formalizes such patterns so they can be used in tools 
 ```
 dataset/
   leet.json           # character substitution with digits/special chars
-  script_switch.json  # script switching (latin ↔ cyrillic, homoglyphs) | WIP
+  script_switch.json  # script switching (latin ↔ cyrillic, homoglyphs) 
   suffixes.json       # diminutive and semantic suffixes | WIP
   combined.json       # examples combining multiple transformations | WIP
   ...                 
