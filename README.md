@@ -2,7 +2,7 @@
 
 A dataset of handle transformation patterns for OSINT purposes.
  
-One of the core problems when searching for a person by username — people rarely use the same handle everywhere. Instead, they apply various transformations: leet speak, script switching, diminutive suffixes, semantic variations, and combinations thereof.
+One of the core problems when searching for a person by username -- sometimes people don't use the same handle everywhere. Instead, they apply various transformations: leet speak, script switching, diminutive suffixes, semantic variations, and combinations thereof.
  
 This dataset collects and formalizes such patterns so they can be used in tools for generating handle variations.
  
